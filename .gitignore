@@ -12,7 +12,6 @@ venv/Lib/site-packages/xgboost/lib/xgboost.dll
 Data/Raw/rawdata.csv
 Data/Processed/processed.csv
 Data/Processed/features.csv
-Data/Processed/rf_model.pkl
 
 # IDE / OS files
 .vscode/
@@ -24,3 +23,6 @@ Models\label_encoder_binary.pkl
 Models\label_encoder.pkl
 Models\xgboost_binary.pkl
 Models\xgboost.pkl
+Models\scaler_binary.pkl
+
+Data\Processed\heatmap.png

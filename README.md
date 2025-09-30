@@ -1,21 +1,28 @@
 # BotHunter
 
 ## Overview
-BotHunt AI is a project that detects botnets by analyzing network traffic flows. It extracts statistical and behavioral features, applies machine learning models for classification, and visualizes infected devices within communication graphs.
+BotHunter-DDoS is a project that detects DDoS-style attacks from flow-level network data. It takes into consideration, volumetric and aggregate features like packets and byte rates, incoming connections per destination, trains a binary classifier to classify traffic into two classes, BENIGN and ATTACK, and provides a simple interactive prediction mode for testing.
 
 ## Project Structure
 ```
 │── Data/
 │   ├── Raw/
-│   └── Rawdata
+│      └── Rawdata
 │   └── Processed/
+│      ├── features.csv
+│      ├── heatmap.png
+│      └── processed.csv
+│── Models/
+│   ├── label_encoder_binary.pkl
+│   ├── label_encoder.pkl
+│   ├── scaler_binary.pkl
+│   ├── xgboost_binary.pkl
+│   └── xgboost.pkl
 │── Src/
-│   ├── preprocessing.py
+│   ├── data_preprocessing.py
 │   ├── feature_extraction.py
 │   ├── model_training.py
-│   ├── graph_analysis.py
-│   ├── visualization.py
-│   └── main.py
+│   └── prediction.py
 │── requirements.txt 
 │── README.md 
 ```
@@ -24,37 +31,31 @@ BotHunt AI is a project that detects botnets by analyzing network traffic flows.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/BotHunt-AI.git
-cd BotHunt-AI
+git clone https://github.com/Anjana2035/BotHunter-DDoS.git
+cd BotHunter-DDoS
 ```
 
-### 2. Create a Virtual Environment
-
-**On Windows (PowerShell):**
-```bash
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
-
-**On Linux/macOS:**
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### 3. Install Dependencies
+### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
+
+### Quick Usage
+```bash
+cd Src
+python prediction.py
 ```
 
 ## Dependencies
 
 Key libraries:
-- pandas, numpy
+- pandas
+- numpy
 - scikit-learn
-- matplotlib, seaborn
-- networkx
 - xgboost
+- joblib
+- matplotlib
+- seaborn
 
 Install them via `requirements.txt`.
 
