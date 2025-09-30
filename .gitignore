@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+wenv/
+venv/Lib/site-packages/xgboost/lib/xgboost.dll
+
+# Data files
+Data/Raw/rawdata.csv
+Data/Processed/processed.csv
+Data/Processed/features.csv
+Data/Processed/rf_model.pkl
+
+# IDE / OS files
+.vscode/
+*.DS_Store
+*.DS_Store
+
+# Models
+Models\label_encoder_binary.pkl
+Models\label_encoder.pkl
+Models\xgboost_binary.pkl
+Models\xgboost.pkl
